@@ -12,10 +12,8 @@ fetch('/static/blackjack_cards.json')
         return response.json();
     })
     .then(data => {
+        //* Code here
         console.log('Fetched data:', data);
-        // Now you can use the data to modify the card
-        // For example, if your JSON contains card info:
-        // card.src = `/static/cards/${data.someCardPath}`;
         card.src = data[Math.floor(Math.random() * 52)]['image']
     })
     .catch(error => {

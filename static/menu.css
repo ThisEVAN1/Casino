@@ -12,11 +12,18 @@ body {
 }
 
 button {
-    display:block;
+    display: block;
     width: 300px;
     height: 100px;
     background-color: lightgoldenrodyellow;
     border: none;
     border-radius: 10px;
     font-size: 2em;
+}
+
+#games {
+  display: flex;
+  justify-content: center; /* Centers horizontally */
+  align-items: center;    /* Centers vertically */
+  height: 80vh;          /* Full viewport height for vertical centering */
 }
