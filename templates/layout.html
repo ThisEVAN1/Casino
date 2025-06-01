@@ -49,15 +49,20 @@
 
         {% if get_flashed_messages() %}
             <header>
-                <div class="alert alert-primary mb-0 text-center" id="flash-message" role="alert">
+                <div class="alert alert-primary mb-0 text-center flash-messages role="alert">
                     {{ get_flashed_messages() | join(" ") }}
                 </div>
             </header>
 
             <script>
-                setTimeout(() => {
-                    document.getElementById('flash-message').style.display = 'none'
-                }, 2000)
+                const flashMessages = document.getElementsByClassName('flash-messages')
+
+                for(let flashMessage of flashMessages) {
+                    setTimeout(() => {
+                        flashMessage.style.display = 'none'
+                    }, 2000)
+                }
+                
             </script>
         {% endif %}
 
