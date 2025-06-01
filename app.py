@@ -21,7 +21,7 @@ app.config["SESSION_TYPE"] = "filesystem"
 Session(app)
 
 # Configure CS50 Library to use SQLite database
-db = SQL("sqlite:///finance.db")
+db = SQL("sqlite:///casino.db")
 
 
 @app.after_request
@@ -32,3 +32,10 @@ def after_request(response):
     response.headers["Pragma"] = "no-cache"
     return response
 
+@app.route('/')
+def index():
+    """ Show the menu """
+    
+    flash('Message')
+    
+    return apology('TODO')
